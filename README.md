@@ -2,26 +2,35 @@
 
 ```sh
 dotnet add package SchematicTech.Supertest
+dotnet add package xunit.v3.assert
 ```
 
-```csharp
-using System;
-using Schematic;
-using static Schematic.Assumptions;
+From the [text-tools example](examples/text-tools):
 
-public static class Arithmetic
+```csharp
+using Schematic;
+using Xunit;
+
+namespace TextTools;
+
+public static class CollapseSpaces
 {
     [Supertest]
-    public static void IntegerDivisionIsBounded(int value, int divisor)
+    public static void CollapsingSpacesAgainChangesNothing(string text)
     {
-        Assume(value >= 0 && divisor > 0);
-        if (value / divisor > value)
-            throw new Exception("Quotient exceeded the dividend");
+        string once = Text.CollapseSpaces(text);
+        string twice = Text.CollapseSpaces(once);
+
+        Assert.Equal(once, twice);
     }
 }
 ```
 
 See the [Getting Started Documentation](https://docs.schematic.tech/pup).
+
+## Example
+
+Try [text-tools](https://github.com/schematic-tech/supertest-csharp/tree/main/examples/text-tools), a space-normalization example with a supertest.
 
 ## License
 
