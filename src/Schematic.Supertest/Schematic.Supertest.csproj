@@ -6,7 +6,7 @@
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <PackageId>SchematicTech.Supertest</PackageId>
-    <Version>0.1.0</Version>
+    <Version>0.1.1</Version>
     <Authors>Schematic</Authors>
     <Description>Authoring primitives for Schematic Supertests</Description>
     <RepositoryUrl>https://github.com/schematic-tech/supertest-csharp</RepositoryUrl>
